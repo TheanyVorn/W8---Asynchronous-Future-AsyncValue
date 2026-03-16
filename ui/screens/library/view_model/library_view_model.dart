@@ -14,6 +14,8 @@ class LibraryViewModel extends ChangeNotifier {
   final PlayerState playerState;
   List<Song>? _songs;
 
+  AsyncValue state = AsyncValue().loading;
+
 
   LibraryViewModel({required this.songRepository, required this.playerState}) {
     playerState.addListener(notifyListeners);
