@@ -3,10 +3,17 @@ import '../../../../data/repositories/songs/song_repository.dart';
 import '../../../states/player_state.dart';
 import '../../../../model/songs/song.dart';
 
+enum AsyncValueState { loading, error, success }
+class AsyncValue<T> {
+  // final T? data;
+  // final Object? error;
+}
+
 class LibraryViewModel extends ChangeNotifier {
   final SongRepository songRepository;
   final PlayerState playerState;
   List<Song>? _songs;
+
 
   LibraryViewModel({required this.songRepository, required this.playerState}) {
     playerState.addListener(notifyListeners);
